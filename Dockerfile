@@ -1,18 +1,11 @@
 FROM node:12-alpine
 
+USER node
 WORKDIR /usr/app/avatars
 
 COPY . .
 
-RUN yarn install
-RUN yarn build
+RUN npm ci
 
-
-ENV AVATARS_PORT=8080
-
+ENTRYPOINT ["npm","start"]
 EXPOSE 8080
-
-USER node
-
-ENTRYPOINT ["yarn"]
-CMD ["start"]
