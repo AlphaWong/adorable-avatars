@@ -5,12 +5,18 @@ A simple docker image for running an [adorable avatars](https://github.com/adora
 # Known issue
 it only support node 12 as one of the modules `lovell/sharp` is outdated see https://github.com/lovell/sharp/issues/2235
 
-# build development
+# Local development
+```sh
+npm i
+npm start
+```
+
+# Build as local environment
 ```sh
 ## build
 docker build -t docker-adorable-avatars .
-##
-
+## test in local
+docker run -p 8080:8080 docker-adorable-avatars
 ```
 
 # Running at HeroKu
